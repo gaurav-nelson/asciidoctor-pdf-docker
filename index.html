@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command generator for ganelson/asciidoctor-pdf-docker image</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>Command generator for<pre>ganelson/asciidoctor-pdf-docker</pre></h1>
+
+    <div class="container">
+      <div class="tab">
+        <button class="tablinks active" data-tab="basicOptions">Basic Options</button>
+        <button class="tablinks" data-tab="advancedOptions">Advanced Options</button>
+      </div>
+
+      <div id="basicOptions" class="tabcontent active">
+        <div class="form-group">
+          <label for="inputFile">Input File(s):</label>
+          <input type="text" id="inputFile" placeholder="document.adoc" />
+          <div class="help-text">AsciiDoc source file(s) to convert</div>
+        </div>
+
+        <div class="form-group">
+          <label for="backend">Backend Format:</label>
+          <select id="backend">
+            <option value="">Default (pdf)</option>
+            <option value="pdf">pdf</option>
+            <option value="html5">html5</option>
+            <option value="docbook5">docbook5</option>
+            <option value="manpage">manpage</option>
+          </select>
+          <div class="help-text">Output format (default: pdf)</div>
+        </div>
+
+        <div class="form-group">
+          <label for="doctype">Document Type:</label>
+          <select id="doctype">
+            <option value="">Default (article)</option>
+            <option value="article">article</option>
+            <option value="book">book</option>
+            <option value="manpage">manpage</option>
+            <option value="inline">inline</option>
+          </select>
+          <div class="help-text">Document type</div>
+        </div>
+
+        <div class="form-group">
+          <label for="outFile">Output File:</label>
+          <input type="text" id="outFile" placeholder="" />
+          <div class="help-text">
+            Output file name (default: based on input file name)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="noHeaderFooter" />
+            <label for="noHeaderFooter">Suppress header/footer</label>
+
+            <input type="checkbox" id="sectionNumbers" />
+            <label for="sectionNumbers">Auto-number sections</label>
+
+            <input type="checkbox" id="embedded" />
+            <label for="embedded">Embedded document</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="advancedOptions" class="tabcontent">
+        <div class="form-group">
+          <label for="safeMode">Safe Mode:</label>
+          <select id="safeMode">
+            <option value="">Default (unsafe)</option>
+            <option value="unsafe">unsafe</option>
+            <option value="safe">safe</option>
+            <option value="server">server</option>
+            <option value="secure">secure</option>
+          </select>
+          <div class="help-text">Controls security restrictions</div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="quiet" />
+            <label for="quiet">Quiet mode</label>
+
+            <input type="checkbox" id="verbose" />
+            <label for="verbose">Verbose mode</label>
+
+            <input type="checkbox" id="timings" />
+            <label for="timings">Show timings</label>
+
+            <input type="checkbox" id="warnings" />
+            <label for="warnings">Show warnings</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Document Attributes:</label>
+          <div class="attributes-container" id="attributesContainer">
+          </div>
+          <button type="button" class="add-attribute" id="addAttributeBtn">
+            Add Attribute
+          </button>
+        </div>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">Reset All Options</button>
+
+      <div id="commandResult" class="result">
+        <button class="copy-btn" id="copyBtn">Copy</button>
+        <div id="commandText"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

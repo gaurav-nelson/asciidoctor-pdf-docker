@@ -1,0 +1,39 @@
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.log
+tmp/
+temp/
+
+# Generated PDF files
+*.pdf
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (if using npm for any scripts)
+node_modules/
+
+# Ruby specific
+*.gem
+.bundle/
+vendor/bundle
+Gemfile.lock
+
+# Output directories
+dist/
+build/
+output/
+
+# Local configuration files
+.env
+.env.local
