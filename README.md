@@ -36,6 +36,10 @@ Where:
 - `-v $(pwd):/documents` mounts your current directory to the `/documents` directory in the container
 - `[OPTIONS]` are any additional Asciidoctor PDF options
 
+### Command generator
+
+Use the command generator app at https://gaurav-nelson.github.io/asciidoctor-pdf-docker/
+
 ### Example with Options
 
 ```bash
